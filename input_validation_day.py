@@ -7,7 +7,7 @@ def WhatDay():
     valid = False
     while not valid:
         valid = True
-        day = input("What day of the week is it? ")
+        day = input("What day of the week is it? Type a day from Sunday-Saturday: ")
         if day.lower() == "sunday":
             day_index = 1
         elif day.lower() == "monday":

@@ -10,7 +10,7 @@ def Meal(today_menu):
     valid = False
     while not valid:
         valid = True
-        meal = input("What meal did you eat? ")
+        meal = input("What meal did you eat? Type Breakfast, Lunch, or Dinner: ")
         if meal.lower() == "breakfast":
             current_meal = DM.Breakfast(meals)
         elif meal.lower() == "lunch":

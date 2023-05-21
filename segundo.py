@@ -1,37 +1,53 @@
 import requests
 from bs4 import BeautifulSoup
+import input_validation as IV
 
-url = "https://housing.ucdavis.edu/dining/menus/dining-commons/segundo/"
-html_text = requests.get(url).text
+html_text = requests.get("https://housing.ucdavis.edu/dining/menus/dining-commons/segundo/").text
+soup = BeautifulSoup(html_text, "lxml")
 
-def WhatDay():
-    '''
-        input validation function
-        not case-sensitive but user must provide full day name
-        returns index related to day    
-    '''
+def TodayMenu(index, website):
+    day_id = "tab" + str(index) + "content"
+    menu = website.find("div", id = day_id)
+    
+    return menu
+
+def Meal(today_menu):
+    meals = today_menu.find_all("div", class_ = "")
     valid = False
     while not valid:
         valid = True
-        day = input("What day of the week is it? ")
-        if day.lower() == "sunday":
-            day_index = 1
-        elif day.lower() == "monday":
-            day_index = 2
-        elif day.lower() == "tuesday":
-            day_index = 3
-        elif day.lower() == "wednesday":
-            day_index = 4
-        elif day.lower() == "thursday":
-            day_index = 5
-        elif day.lower() == "friday":
-            day_index = 6
-        elif day.lower() == "saturday":
-            day_index = 7
+        meal = input("What meal did you eat? ")
+        if meal.lower() == "breakfast":
+            current_meal = Breakfast(meals)
+        elif meal.lower() == "lunch":
+            current_meal = Lunch(meals)
+        elif meal.lower() == "dinner":
+            current_meal = Dinner(meals)
         else:
-            print("Please enter a valid day.")
-            valid = False # reenter loop if not valid
+            print("Please enter a valid meal type.")
+            valid = False
+    
+    return current_meal
+        
+def Breakfast(todays):
+    for meal in todays:
+        if "Breakfast" in meal.text:
+            return meal
 
-    return day_index
+def Lunch(todays):
+    for meal in todays:
+        if "Lunch" in meal.text:
+            return meal
 
-WhatDay()
+def Dinner(todays):
+    for meal in todays:
+        if "Dinner" in meal.text:
+            return meal
+
+day_index = IV.WhatDay()
+today_menu = TodayMenu(day_index, soup)
+this_meal = Meal(today_menu)
+print(this_meal)
+# menu_items = today_menu.find_all("li", class_ = "trigger")
+# for item in menu_items:
+#     print(item.find("span", class_ = "").text.strip())

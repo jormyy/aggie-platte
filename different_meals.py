@@ -8,7 +8,7 @@ def Breakfast(todays):
 
 def Lunch(todays):
     '''
-        looks for keyword "Lunch" to get menu for breakfast
+        looks for keyword "Lunch" to get menu for lunch
     '''
     for meal in todays:
         if "Lunch" in meal.text:
@@ -16,7 +16,7 @@ def Lunch(todays):
 
 def Dinner(todays):
     '''
-        looks for keyword "Dinner" to get menu for breakfast
+        looks for keyword "Dinner" to get menu for dinner
     '''
     for meal in todays:
         if "Dinner" in meal.text:

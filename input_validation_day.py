@@ -1,6 +1,6 @@
 def WhatDay():
     '''
-        input validation function
+        input validation function for the day
         not case-sensitive but user must provide full day name
         returns index related to day    
     '''

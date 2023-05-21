@@ -70,9 +70,15 @@ def NutritionFacts(menu_items):
     
     return food_dictionary
 
+def CleanFormat(nutrition_facts):
+    filtered_dict = {key: value.replace(": ", "") for key, value in nutrition_facts.items()}
+
+    return filtered_dict
+
 day_index = IV.WhatDay()
 today_menu = TodayMenu(day_index, soup)
 this_meal = Meal(today_menu)
 menu_items = Items(this_meal)
 nutrition_facts = NutritionFacts(menu_items)
-print(nutrition_facts)
+filtered_facts = CleanFormat(nutrition_facts)
+print(filtered_facts)

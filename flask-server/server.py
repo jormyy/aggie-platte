@@ -108,7 +108,7 @@ def breakfast():
 
 @app.route('/lunch.html')
 def lunch():
-    this_meal = DM.Breakfast(menu)
+    this_meal = DM.Lunch(menu)
     menu_items = Items(this_meal) # gets every menu item that has nutrient facts
     nutrition_facts = NutritionFacts(menu_items) # organizes menu items in a dictionary
     WriteTojson(nutrition_facts) # writes all the facts into a json file
@@ -116,7 +116,7 @@ def lunch():
 
 @app.route('/dinner.html')
 def dinner():
-    this_meal = DM.Breakfast(menu)
+    this_meal = DM.Dinner(menu)
     menu_items = Items(this_meal) # gets every menu item that has nutrient facts
     nutrition_facts = NutritionFacts(menu_items) # organizes menu items in a dictionary
     WriteTojson(nutrition_facts) # writes all the facts into a json file

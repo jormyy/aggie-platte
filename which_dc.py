@@ -14,8 +14,6 @@ def WhichDC():
             url = "https://housing.ucdavis.edu/dining/menus/dining-commons/tercero/#"
         elif dc.lower() == "cuarto":
             url = "https://housing.ucdavis.edu/dining/menus/dining-commons/cuarto/"
-        # elif dc.lower() == "latitude":
-        #     url = "https://housing.ucdavis.edu/dining/menus/dining-commons/latitude/"
         else:
             print("Please enter a valid dining common.")
             valid = False

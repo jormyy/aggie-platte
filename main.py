@@ -6,7 +6,9 @@ from specific_day import TodayMenu
 from input_validation_meal import Meal
 from food_items import Items
 from nutrition_facts import NutritionFacts
-from write_to_json import WriteTojson
+from print_menu import PrintMenu
+from calculate import Calculate
+from print_nutrition import PrintNutrition
 
 if __name__ == "__main__":
     url = WhichDC()
@@ -18,4 +20,6 @@ if __name__ == "__main__":
     this_meal = Meal(today_menu) # gets breakfast, lunch, or dinner menu
     menu_items = Items(this_meal) # gets every menu item that has nutrient facts
     nutrition_facts = NutritionFacts(menu_items) # organizes menu items in a dictionary
-    WriteTojson(nutrition_facts) # writes all the facts into a json file
+    number_of_items = PrintMenu(nutrition_facts) # prints menu in a user-friendly way and gets number of food items
+    total_nut = Calculate(nutrition_facts, number_of_items) # gets total nutritional value of meal
+    PrintNutrition(total_nut) # prints user's total nutritional value

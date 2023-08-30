@@ -26,3 +26,6 @@ consumed, as well as the number of grams of fat, carbohydrates, and protein.
 - This program only applies to UC Davis
 - Some menu options have nutrient values of "N/A" and cannot be included in the calculations
 - This program does not work when school is not in session because the menus are empty at those times
+
+## Video Demo
+https://github.com/jormyy/aggie-platter/assets/44372238/fdb94799-cc18-4197-9688-6a35da631d05

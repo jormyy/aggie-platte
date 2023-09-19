@@ -28,4 +28,4 @@ consumed, as well as the number of grams of fat, carbohydrates, and protein.
 - This program does not work when school is not in session because the menus are empty at those times
 
 ## Video Demo
-https://github.com/jormyy/aggie-platter/assets/44372238/fdb94799-cc18-4197-9688-6a35da631d05
+https://github.com/jormyy/aggie-platter/assets/44372238/165e3a78-18ae-46ba-bcd3-8582cd9513d8
